@@ -3,7 +3,7 @@ import { colors } from './constants/colors';
 import { ThemeContext } from './interfaces';
 import { typography } from './constants/typography';
 import { useColorScheme } from 'react-native';
-import { useMMKVString } from 'react-native-mmkv';
+import { useStringStoraManager } from 'libs/StoreManager';
 
 export const themeContext = createContext<ThemeContext>({
   theme: { colors: colors.light, typography },
@@ -12,7 +12,7 @@ export const themeContext = createContext<ThemeContext>({
 } as ThemeContext);
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [userTheme, setUserTheme] = useMMKVString('user-theme');
+  const [userTheme, setUserTheme] = useStringStoraManager('user-theme');
   const devieTheme = useColorScheme();
 
   const currentTheme = userTheme ?? devieTheme;

@@ -1,6 +1,6 @@
 import { typography } from '../constants/typography';
 
-export interface ITheme {
+export interface Theme {
   typography: typeof typography;
   colors: {
     PRIMARY: string;
@@ -13,7 +13,7 @@ export interface ITheme {
 }
 
 export interface ThemeContext {
-  theme: ITheme;
+  theme: Theme;
   isDarkMode: boolean;
   setUserTheme: (val: string | undefined) => void;
 }

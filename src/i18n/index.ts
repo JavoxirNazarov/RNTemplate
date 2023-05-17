@@ -1,7 +1,7 @@
 import i18n, { ModuleType } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import { NativeModules, Platform } from 'react-native';
-import { StorageService } from 'src/services/storageService';
+import { StoreManager } from 'libs/StoreManager';
 import en from './translations/en.json';
 import fr from './translations/fr.json';
 
@@ -26,18 +26,18 @@ const LanguageDetector = {
   async: false,
   init: () => {},
   detect: function () {
-    const language = StorageService.getString('user-language');
+    const language = StoreManager.getValue('user-language');
     if (language) {
       return language;
     }
 
     const localLanguage = locale!.substring(0, 2);
 
-    StorageService.setValue('user-language', localLanguage);
+    StoreManager.setValue('user-language', localLanguage);
     return localLanguage;
   },
   cacheUserLanguage: function (language: string) {
-    StorageService.setValue('user-language', language);
+    StoreManager.setValue('user-language', language);
   },
 };
 

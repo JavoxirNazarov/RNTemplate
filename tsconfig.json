@@ -5,9 +5,8 @@
     "baseUrl": "./",
     "paths": {
       "feauteres/*": ["src/feauteres/*"],
-      "services/*": ["src/services/*"],
-      "components/*": ["src/components/*"]
-
+      "libs/*": ["src/libs/*"],
+      "components/*": ["src/common/components/*"]
     }                            
   },
 }

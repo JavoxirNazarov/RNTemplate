@@ -1,8 +1,8 @@
 import { Text, StyleSheet } from 'react-native';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ITheme } from 'services/themeService/interfaces';
-import { useStyledTheme, useTheme } from 'services/themeService/hooks';
+import { Theme } from 'feauteres/theme/interfaces';
+import { useStyledTheme, useTheme } from 'feauteres/theme/hooks';
 
 export default function RootScreen() {
   const style = useStyledTheme(styles);
@@ -21,7 +21,7 @@ export default function RootScreen() {
   );
 }
 
-const styles = (theme: ITheme) => {
+const styles = (theme: Theme) => {
   return StyleSheet.create({
     text: { color: theme.colors.BACKGROUND },
   });

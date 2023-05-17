@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
-import { ThemeProvider } from './src/services/themeService/themeProvider';
-import RootScreen from './src/navigation';
+import { ThemeProvider } from './src/feauteres/theme';
+import RootScreen from './src/feauteres/navigation';
 
 const App = () => {
   return (

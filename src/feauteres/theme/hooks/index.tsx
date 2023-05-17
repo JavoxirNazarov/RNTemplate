@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
-import { ITheme } from '../interfaces';
-import { themeContext } from '../themeProvider';
+import { Theme } from '../interfaces';
+import { themeContext } from '..';
 
 export const useTheme = () => useContext(themeContext);
 
 export function useStyledTheme<T>(
-  styles: (theme: ITheme) => StyleSheet.NamedStyles<T>,
+  styles: (theme: Theme) => StyleSheet.NamedStyles<T>,
 ) {
   const { theme } = useTheme();
 
